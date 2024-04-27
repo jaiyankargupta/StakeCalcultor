@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Stake Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">IPL Stake Calculator</h2>
+            <div class="input-section">
+                <label for="team1">IPL Team 1:</label>
+                <input type="text" id="team1" placeholder="Team Name">
+                <input type="number" id="rate1" placeholder="Rate">
+                <input type="number" id="amount1" placeholder="Amount">
+            </div>
+            <div class="input-section">
+                <label for="team2">IPL Team 2:</label>
+                <input type="text" id="team2" placeholder="Team Name">
+                <input type="number" id="rate2" placeholder="Rate">
+                <input type="number" id="amount2" placeholder="Amount">
+            </div>
+            <button onclick="calculate()">Calculate Payout</button>
+            <div id="results"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
