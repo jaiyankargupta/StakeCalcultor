@@ -1,40 +1,79 @@
-function calculate() {
-  
-    var team1Name = capitalizeFirstLetter(document.getElementById('team1').value);
-    var team1Rate = parseFloat(document.getElementById('rate1').value);
-    var team1Amount = parseFloat(document.getElementById('amount1').value);
-
-    var team2Name = capitalizeFirstLetter(document.getElementById('team2').value);
-    var team2Rate = parseFloat(document.getElementById('rate2').value);
-    var team2Amount = parseFloat(document.getElementById('amount2').value);
-
-    if ((!team1Name && (!team2Name || isNaN(team2Rate) || isNaN(team2Amount))) ||
-        (!team2Name && (!team1Name || isNaN(team1Rate) || isNaN(team1Amount)))) {
-        alert("Please fill in all fields for at least one team with valid inputs.");
-        return;
-    }
-
-    var team1Stake = team1Rate * team1Amount;
-    var team2Stake = team2Rate * team2Amount;
-    var pay2000team1 = (team1Rate != 0) ? 2000.0 / team1Rate : 0;
-    var pay2000team2 = (team2Rate != 0) ? 2000.0 / team2Rate : 0;
-
-    
-    var resultMessages = [];
-    if (team1Name) {
-        resultMessages.push(`<p>${team1Name} Stake Payout: ${team1Stake}</p>`);
-        resultMessages.push(`<p>If You Want to Win Rs 2000, then you should Pay: ${pay2000team1}</p>`);
-    }
-    if (team2Name) {
-        resultMessages.push(`<p>${team2Name} Stake Payout: ${team2Stake}</p>`);
-        resultMessages.push(`<p>If You Want to Win Rs 2000, then you should Pay: ${pay2000team2}</p>`);
-    }
-
-   
-    var resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = resultMessages.join('');
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to left, #ff0000, #00ff00);
+  overflow-y: auto;
 }
 
-function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  padding-right: 40px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#results {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
 }
