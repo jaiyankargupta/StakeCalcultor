@@ -53,7 +53,7 @@ input[type="number"] {
 button {
   padding: 10px 20px;
   margin: 20px 0;
-  background-color: #4caf50;
+  background-color: #248f27;
   color: white;
   border: none;
   cursor: pointer;
@@ -65,7 +65,7 @@ button {
 
 button:hover {
   background-color: #1009d0;
-  border-radius: 10PX;
+  border-radius: 10px;
 }
 
 #results {
@@ -79,20 +79,24 @@ button:hover {
   }
 }
 
-.social-media{
+.social-media {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  background-color: #0e01ff;
-  border-radius: 20px;
-  color: aliceblue;
-
 }
-.social-media a{
+
+.social-media a {
   text-decoration: none;
   margin: 5px;
   color: aliceblue;
+  padding: 10px;
+  background-color: #0e01ff;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
 
-
+.social-media a:hover {
+  background-color: #197205;
+  
 }
