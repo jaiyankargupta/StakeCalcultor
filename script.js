@@ -38,10 +38,12 @@ function calculate() {
 
   if (team1Name) {
     resultMessages.push(`<p>${team1Name} Stake Payout: ${team1Stake}</p>`);
+     resultMessages.push(`<p>If You Want to Win Rs 2000, then you should Pay ${team1Name}: ${pay2000team1}</p>`);
   }
 
   if (team2Name) {
     resultMessages.push(`<p>${team2Name} Stake Payout: ${team2Stake}</p>`);
+     resultMessages.push(`<p>If You Want to Win Rs 2000, then you should Pay ${team2Name}: ${pay2000team2}</p>`);
   }
 
   resultMessages.push(`<p>Total Stake Amount: ${totalamount}</p>`);
